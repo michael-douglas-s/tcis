@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+    form {
+      padding: 15px;
+      margin: 0 10px;
+    }
+  
+    .radio-group {
+      flex-direction: column;
+    }
+  
+    .foto-item {
+      width: 100%;
+    }
+  
+    header span {
+      font-size: 1.2em;
+    }
+  
+    button {
+      margin: 10px 0;
+      width: 100%;
+    }
+  }
+  

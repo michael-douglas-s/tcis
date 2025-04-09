@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/responsivo.css">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <img src="./src/images/TCIS.webp" alt="Logo TCIS" />
+        <span style="font-size: 1.5em;">Ispeção de Cargas em Geral</span>
+      </header>
+
+      <section class="forms">
+        <form class="form" id="formulario-tcis">
+          <h2>Relatório de Inspeção</h2>
+      
+          <label for="terminal">Terminal*</label>
+          <select id="terminal" required>
+            <option value="">Selecione</option>
+            <option value="TSA">TSA - Terminal Serra Azul</option>
+            <option value="SZD">SZD - Sarzedo Velho (Itaminas)</option>
+            <option value="TCS">TCS - Terminal Sarzedo Novo</option>
+            <option value="TCM">TCM - Terminal Murtinho</option>
+            <option value="TCI">TCI - Terminal de Itutinga</option>
+          </select>
+      
+          <label for="inspetor">Inspetores*</label>
+          <select id="inspetor" required>
+            <option value="">Selecione</option>
+            <option value="João">João</option>
+            <option value="Maria">Maria</option>
+            <option value="Carlos">Carlos</option>
+            <!-- Adicione mais nomes aqui -->
+          </select>
+      
+          <label for="data">Data*</label>
+          <input type="date" id="data" required>
+      
+          <label for="horario">Horário*</label>
+          <input type="time" id="horario" required>
+      
+          <label for="horaTermino">Hora do término*</label>
+          <input type="time" id="horaTermino" required>
+      
+          <label for="horaSaida">Hora de saída*</label>
+          <input type="time" id="horaSaida" required>
+  
+          <label for="dataTermino">Data do Início*</label>
+          <input type="date" id="dataTermino" required>
+          
+          <label for="dataTermino">Data do término*</label>
+          <input type="date" id="dataTermino" required>
+      
+          <label>Houve registro de contaminação?*</label>
+          <div class="radio-group">
+            <label><input type="radio" name="contaminacao" value="Sim" required> Sim</label>
+            <label><input type="radio" name="contaminacao" value="Não"> Não</label>
+          </div>
+      
+          <label for="descricaoContaminacao">Se sim, descreva o contaminante, onde foi encontrado e se foi retirada:</label>
+          <textarea id="descricaoContaminacao"></textarea>
+      
+          <label>Material homogêneo?*</label>
+          <div class="radio-group">
+            <label><input type="radio" name="homogeneo" value="Sim" required> Sim</label>
+            <label><input type="radio" name="homogeneo" value="Não"> Não</label>
+            <label><input type="radio" name="homogeneo" value="NaoSeparado"> Não, mas carregado em vagões separados</label>
+          </div>
+      
+          <label>Umidade visível?*</label>
+          <div class="radio-group">
+            <label><input type="radio" name="umidade" value="Sim" required> Sim</label>
+            <label><input type="radio" name="umidade" value="Não"> Não</label>
+          </div>
+      
+          <label>Houve chuva durante a carga?*</label>
+          <div class="radio-group">
+            <label><input type="radio" name="chuva" value="Sim" required> Sim</label>
+            <label><input type="radio" name="chuva" value="Não"> Não</label>
+            <label><input type="radio" name="chuva" value="Parcial"> Somente em partes da carga</label>
+          </div>
+      
+          <label>Fornecedor acompanhou a carga e a preparação das amostras?*</label>
+          <div class="radio-group">
+            <label><input type="radio" name="fornecedor" value="Sim" required> Sim</label>
+            <label><input type="radio" name="fornecedor" value="Não"> Não</label>
+            <label><input type="radio" name="fornecedor" value="ParcialCarga"> Somente parte da carga</label>
+            <label><input type="radio" name="fornecedor" value="SomenteCarga"> Somente a carga</label>
+            <label><input type="radio" name="fornecedor" value="SomenteAmostras"> Somente a preparação das amostras</label>
+          </div>
+      
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes"></textarea>
+      
+          <!-- A próxima etapa será a parte de fotos com descrição -->
+          <h3>Fotos com Descrição</h3>
+          <div id="fotos-container" class="grid-fotos">
+            <!-- Fotos e descrições irão aparecer aqui -->
+          </div>
+          
+        
+          
+          <div style="text-align: center; margin-top: 20px;">
+            <button type="button" onclick="adicionarCampoImagem()">Adicionar Foto</button>
+            <button type="button" id="btn-download">Baixar PDF</button>
+            <button type="button" id="btn-send">Enviar PDF</button>
+          </div>
+        </form>
+      
+      </section>
+      
+      
+      
+      <script src="./src/js/index.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+      <script src="./src/js/index.js"></script>
+
+
+
+</body>
+</html>
