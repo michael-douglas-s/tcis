@@ -1,40 +1,16 @@
 @media (max-width: 768px) {
-    body {
-      padding-top: 100px;
-    }
-  
-    form {
-      padding: 15px;
-      margin: 10px;
-    }
-  
-    .radio-group {
-      flex-direction: column;
-      gap: 5px;
-    }
-  
-    .foto-item {
-      width: 100%; /* em vez de 33.33% */
-    }
-  
-    button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-    }
-  
-    header span {
-      font-size: 1em;
-      display: block;
-      margin-top: 10px;
-    }
-  
-    header img {
-      display: block;
-      margin: 0 auto;
-    }
-
-    label {
-        text-align: center;}
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    gap: 1.4rem;
   }
-  
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  header img {
+    height: 40px;
+  }
+}
