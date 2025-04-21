@@ -1,6 +1,9 @@
+/* Melhorias no design para um visual mais profissional */
 body {
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
+  font-family: 'Roboto', sans-serif; /* Fonte mais moderna */
+  background-color: #f9f9f9; /* Fundo mais claro e suave */
+  color: #333; /* Texto com contraste mais suave */
+  line-height: 1.6; /* Melhor espaçamento entre linhas */
 }
 
 header {
@@ -8,36 +11,42 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #5f8ac2;
+  background: linear-gradient(90deg, #5f8ac2, #3b6ca8); /* Gradiente para um visual mais sofisticado */
   display: flex;
   align-items: center;
   gap: 2rem;
   justify-content: center;
   padding: 1.8rem;
-  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o cabeçalho */
   z-index: 1000;
-
 }
+
 header img {
   height: 50px;
 }
 
 .header-title {
-  font-size: 1.6rem;
+  font-size: 1.8rem; /* Tamanho maior para destaque */
+  font-weight: bold; /* Texto mais marcante */
   color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra no texto para profundidade */
 }
 
 form {
-  background: white;
-  padding: 20px;
+  background: #ffffff; /* Fundo branco puro */
+  padding: 30px; /* Mais espaçamento interno */
   max-width: 900px;
   margin: 20px auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border: 1px solid #e0e0e0; /* Borda mais sutil */
+  border-radius: 10px; /* Bordas mais arredondadas */
   margin-top: 8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
-h2 {
-  color: #333;
+
+h2, h3 {
+  font-family: 'Roboto', sans-serif; /* Fonte consistente com o corpo do texto */
+  font-weight: bold; /* Destaque para os títulos */
+  color: #2c3e50; /* Cor mais elegante */
 }
 
 label {
@@ -45,6 +54,7 @@ label {
   margin: 15px 0 5px;
   font-weight: bold;
 }
+
 input,
 select,
 textarea {
@@ -52,17 +62,28 @@ textarea {
   padding: 8px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #d0d0d0; /* Borda mais clara */
   box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
 }
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #5f8ac2; /* Cor de foco consistente com o tema */
+  box-shadow: 0 0 5px rgba(95, 138, 194, 0.5); /* Sombra ao focar */
+}
+
 .radio-group {
   display: flex;
   gap: 15px;
   margin-bottom: 10px;
 }
+
 .radio-group label {
   font-weight: normal;
 }
+
 textarea {
   height: 100px;
   resize: vertical;
@@ -73,16 +94,18 @@ textarea {
 .grid-fotos {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px; /* Mais espaçamento entre itens */
   margin-top: 15px;
 }
 
 .foto-item {
   width: calc(33.33% - 10px);
-  background: #f0f0f0;
+  background: #ffffff; /* Fundo branco puro */
   padding: 10px;
   border-radius: 6px;
   box-sizing: border-box;
+  border: 1px solid #e0e0e0; /* Borda mais clara */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
 
 .foto-item img {
@@ -91,6 +114,7 @@ textarea {
   object-fit: cover;
   margin-top: 8px;
   border-radius: 4px;
+  border: 1px solid #d0d0d0; /* Borda ao redor da imagem */
 }
 
 .foto-item textarea {
@@ -100,8 +124,12 @@ textarea {
   height: 60px;
 }
 
+/* Ajuste para corrigir estilo dos botões no iPhone */
 button {
-  background-color: #7aa7d9;
+  -webkit-appearance: none; /* Neutralizar estilo padrão no iOS */
+  appearance: none; /* Neutralizar estilo padrão em navegadores modernos */
+  outline: none; /* Remover borda ao focar */
+  background: linear-gradient(90deg, #7aa7d9, #5f8ac2); /* Gradiente para botões */
   color: white;
   padding: 10px 20px;
   margin: 0 10px;
@@ -110,11 +138,30 @@ button {
   cursor: pointer;
   font-size: 1rem;
   transition: background 0.3s;
-}
-button:hover {
-  background-color: #5f8ac2;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 120px; /* Garantir largura mínima */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  font-weight: bold; /* Texto mais marcante */
 }
 
-h3 {
-  text-align: center;
+button:hover {
+  background: linear-gradient(90deg, #5f8ac2, #3b6ca8); /* Gradiente invertido ao passar o mouse */
+}
+
+button:active {
+  transform: scale(0.98); /* Feedback visual ao clicar */
+}
+
+button:focus {
+  outline: none; /* Remover borda padrão */
+  box-shadow: 0 0 8px rgba(95, 138, 194, 0.8); /* Sombra de foco mais evidente */
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 480px) {
+  button {
+    width: 100%; /* Botões ocupam toda a largura em telas pequenas */
+    margin: 10px 0; /* Ajustar espaçamento vertical */
+  }
 }

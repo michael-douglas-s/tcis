@@ -13,4 +13,86 @@
   header img {
     height: 40px;
   }
+
+  form {
+    padding: 15px;
+    margin: 10px;
+    box-shadow: none; /* Remover sombra para simplificar em telas menores */
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 0.9rem; /* Ajustar tamanho da fonte */
+  }
+
+  .radio-group {
+    flex-direction: column; /* Alterar para coluna em telas menores */
+    gap: 10px;
+  }
+
+  button {
+    width: 100%; /* Botões ocupam toda a largura */
+    margin: 10px 0; /* Ajustar espaçamento vertical */
+  }
+
+  .grid-fotos {
+    flex-direction: column; /* Fotos em uma única coluna */
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espaçamento uniforme entre as fotos */
+  }
+
+  .foto-item {
+    width: 100%; /* Fotos ocupam toda a largura */
+    width: calc(33.33% - 10px); /* Três fotos lado a lado com espaçamento */
+    margin-bottom: 10px; /* Espaçamento inferior entre as linhas de fotos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 250px; /* Altura fixa para uniformizar as caixas */
+    box-sizing: border-box;
+  }
+
+  .foto-item img {
+    max-height: 150px; /* Altura máxima para as imagens */
+    object-fit: cover; /* Ajustar imagem dentro da caixa */
+    width: 100%;
+    border-radius: 4px;
+    height: 150px; /* Altura fixa para todas as imagens */
+  }
+
+  .foto-item textarea {
+    flex-grow: 1; /* Expandir para preencher o espaço restante */
+    width: 100%;
+    margin-top: 8px;
+    resize: none; /* Desativar redimensionamento */
+    height: 60px; /* Altura fixa para o texto */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    gap: 1rem;
+  }
+
+  .header-title {
+    font-size: 1rem;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 0.8rem; /* Reduzir ainda mais o tamanho da fonte */
+  }
+
+  button {
+    font-size: 0.9rem; /* Ajustar tamanho da fonte dos botões */
+  }
 }
